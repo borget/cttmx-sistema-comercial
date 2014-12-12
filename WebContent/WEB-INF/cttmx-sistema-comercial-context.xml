@@ -6,7 +6,7 @@
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 	
-	<util:properties id="appProperties" location="file:///home/alberto/skyguardian/workspace/cttmx-sistema-comercial/config/cttmx-application.properties"/>
+	<util:properties id="appProperties" location="file:///home/alberto/git/cttmx-sistema-comercial/config/cttmx-application.properties"/>
 	<!-- util:properties id="appProperties" location="file:///home/sistema-comercial/cttmx-application.properties"/-->
 	<!-- util:properties id="appProperties" location="file:C:/xampp/tomcat/webapps/config/cttmx/appProperties.properties"/ -->
 	
