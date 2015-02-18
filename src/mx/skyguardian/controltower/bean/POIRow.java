@@ -7,18 +7,17 @@ public class POIRow extends AbstractWialonEntity {
 	
 	Short number = 0;
 	String dateTime = "01/01/1970 00:00:00";
-	
-	String pdi = "PDI not found";
+	String geocerca = "Geocerca not found.";
 
 	public POIRow() {
 	
 	}
 		
-	public POIRow(Short number, String dateTime, String pdi) {
+	public POIRow(Short number, String dateTime, String geocerca) {
 		super();
 		this.number = number;
 		this.dateTime = dateTime;
-		this.pdi = pdi;
+		this.geocerca = geocerca;
 	}
 		
 	public Short getNumber() {
@@ -27,13 +26,6 @@ public class POIRow extends AbstractWialonEntity {
 	public void setNumber(Short number) {
 		this.number = number;
 	}
-
-	public String getPdi() {
-		return pdi;
-	}
-	public void setPdi(String pdi) {
-		this.pdi = pdi;
-	}
 	
 	public String getDateTime() {
 		return dateTime;
@@ -41,5 +33,13 @@ public class POIRow extends AbstractWialonEntity {
 
 	public void setDateTime(String dateTime) {
 		this.dateTime = dateTime;
+	}
+
+	public String getGeocerca() {
+		return geocerca;
+	}
+
+	public void setGeocerca(String geocerca) {
+		this.geocerca = geocerca;
 	}
 }

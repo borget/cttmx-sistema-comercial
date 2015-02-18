@@ -201,16 +201,11 @@ public class SimpleJSONDeserializer extends AbsctractJSONDeserializer {
 					
 					if (c.length()>0) {
 						JSONObject timeFrom = findObject(c, "Time");
-						
 						String timeFromValue = (timeFrom.isNull("v"))?"0":timeFrom.get("v").toString();
-						
-						
 						poiRow.setDateTime(AppUtils.getDatetime(timeFromValue));
 
-						JSONObject pdi = findObject(c, "PDI");
-						String pdiValue = (pdi.isNull("t"))?"PDI not found":pdi.get("t").toString();
-						poiRow.setPdi(pdiValue);
-
+						String geocercaValue = getGeocercaDescription(c);
+						poiRow.setGeocerca(geocercaValue!=null ? geocercaValue : "Geocerca not found.");
 					}
 					listPois.add(poiRow);
 				}
@@ -220,6 +215,17 @@ public class SimpleJSONDeserializer extends AbsctractJSONDeserializer {
 			
 		}
 		return poi;
+	}
+	
+	private String getGeocercaDescription(JSONArray jArray) {
+		String geocercaValue = null;
+		Object geocerca = jArray.get(2);
+		
+		if (geocerca != null && geocerca instanceof String) {
+			geocercaValue = (String)geocerca;
+		}
+		
+		return geocercaValue;
 	}
 	
 	private JSONObject findObject(JSONArray jsonArray, String typeOfObj) {
