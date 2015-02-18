@@ -1,9 +1,9 @@
 package mx.skyguardian.controltower.http.remoting;
 
 public abstract class AbstractUser {
-	private String eid = "";
-	private Boolean isActive = false;
-	private Integer serverTime = 0;
+	private String eid = null;
+	private Boolean isActive = null;
+	private Integer serverTime = null;
 	
 	public Integer getServerTime() {
 		return serverTime;

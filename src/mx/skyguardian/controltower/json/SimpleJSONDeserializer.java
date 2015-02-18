@@ -219,8 +219,11 @@ public class SimpleJSONDeserializer extends AbsctractJSONDeserializer {
 	
 	private String getGeocercaDescription(JSONArray jArray) {
 		String geocercaValue = null;
-		Object geocerca = jArray.get(2);
+		Object geocerca = null;
 		
+		if(jArray.length()==3)
+			geocerca = jArray.get(2);
+			
 		if (geocerca != null && geocerca instanceof String) {
 			geocercaValue = (String)geocerca;
 		}

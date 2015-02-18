@@ -308,7 +308,7 @@ public class SkyGuardianControlTowerManager implements IControlTowerManager {
 		
 		log.debug("SERVER_TIME="+wialonSession.getServerTime());
 		
-		if (!wialonSession.getEid().isEmpty()) {
+		if (wialonSession.getEid() !=null && !wialonSession.getEid().isEmpty()) {
 			properties.clear();
 			properties.put("unitID", unitID);
 			properties.put("fromDatetime", String.valueOf(AppUtils.getFromDatetime()));
@@ -324,7 +324,7 @@ public class SkyGuardianControlTowerManager implements IControlTowerManager {
 			poi.setUnitID(Long.valueOf(unitID));
 		} else {
 			log.error("Authentication error...");
-			throw new WialonInternalServerError();
+			throw new WialonAccessDeniedException();
 		}
 
 		return poi;
